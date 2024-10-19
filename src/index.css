@@ -64,3 +64,9 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* src/index.css or your global CSS file */
+@font-face {
+  font-family: 'Robotos'; /* Replace with your font's name */
+  src: url('src/assets/fonts/static/RobotoSlab-Regular.ttf') format('truetype');
+}

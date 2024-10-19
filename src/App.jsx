@@ -1,15 +1,16 @@
-import { Button } from "@/components/ui/button";
+import { Outlet } from "react-router-dom";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 function App() {
   return (
     <>
-      <div className="flex justify-center m-auto">
-        <Button
-          className="bg-black text-white "
-          variant="outline"
-        >
-          druthi constructions
-        </Button>
+      <div>
+        <Header />
+        {/* <div className="pt-20"> */}
+          <Outlet />
+        {/* </div> */}
+        <Footer />
       </div>
     </>
   );
