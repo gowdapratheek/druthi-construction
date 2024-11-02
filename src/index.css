@@ -70,3 +70,10 @@
   font-family: 'Robotos'; /* Replace with your font's name */
   src: url('src/assets/fonts/static/RobotoSlab-Regular.ttf') format('truetype');
 }
+
+.font-roboto-slab {
+  font-family: 'Roboto Slab', serif;
+}
+.font-pop {
+  font-family: "Poppins", serif;
+}

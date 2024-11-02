@@ -6,6 +6,9 @@ import Err from "./pages/Err";
 import App from "./App";
 import Home from "./pages/Home";
 import Faqs from "./pages/Faqs";
+import AboutUs from "./pages/AboutUs";
+import EstimateSection from "./pages/EstimateSection";
+import Services from "./pages/Services";
 
 const router = createBrowserRouter([
   {
@@ -18,8 +21,20 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
+        path: "/EstimateSection ",
+        element: <EstimateSection/>,
+      },
+      {
         path: "faqs",
         element: <Faqs />,
+      },
+      {
+        path: "services",
+        element: <Services />,
+      },
+      {
+        path: "aboutus",
+        element: <AboutUs />,
       },
       {
         path: "*",

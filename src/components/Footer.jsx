@@ -19,7 +19,7 @@ const Footer = () => {
                 href="tel:+919448380947"
                 className="text-gray-600 hover:underline"
               >
-                +91 9448380947
+                +91 XXXXXXXXXX
               </a>
             </p>
             <p style={{ fontFamily: "Poppins, serif" }}>
@@ -60,15 +60,19 @@ const Footer = () => {
               className="space-y-2 mt-2"
               style={{ fontFamily: "Poppins, serif" }}
             >
-              {["Home", "About Us", "Contact Us", "Projects", "Our Team"].map(
-                (link, index) => (
-                  <li key={index}>
-                    <a href="#" className="text-gray-600 hover:underline">
-                      {link}
-                    </a>
-                  </li>
-                )
-              )}
+              {[
+                { title: "Home", link: "/" },
+                { title: "About Us", link: "/aboutus" },
+                { title: "Contact Us", link: "/contact" },
+                { title: "Projects", link: "/projects" },
+                { title: "Our Team", link: "/aboutus" },
+              ].map((item, index) => (
+                <li key={index}>
+                  <a href={item.link} className="text-gray-600 hover:underline">
+                    {item.title}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -94,7 +98,7 @@ const Footer = () => {
                 <div className="hidden md:flex space-x-4">
                   {[
                     {
-                      href: "https://www.instagram.com/druthi_constructions/",
+                      href: "https://www.instagram.com/druthi_construction/",
                       icon: FaInstagram,
                     },
                     { href: "https://facebook.com", icon: FaFacebookF },

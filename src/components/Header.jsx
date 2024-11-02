@@ -133,7 +133,7 @@ function Header() {
         <div className="hidden md:flex space-x-4">
           {[
             {
-              href: "https://www.instagram.com/druthi_constructions/",
+              href: "https://www.instagram.com/druthi_construction/",
               icon: FaInstagram,
             },
             { href: "https://facebook.com", icon: FaFacebookF },
@@ -218,7 +218,7 @@ function Header() {
           <div className="flex md:hidden justify-evenly w-full text-center p-6">
             {[
               {
-                href: "https://www.instagram.com/druthi_constructions/",
+                href: "https://www.instagram.com/druthi_construction/",
                 icon: FaInstagram,
               },
               { href: "https://facebook.com", icon: FaFacebookF },
