@@ -6,7 +6,7 @@ const AboutUs = () => {
   return (
     <div className="p-6 sm:p-8 mt-[15vh]">
     <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
-      <h2 className="text-center text-2xl sm:text-3xl font-semibold mb-4 sm:mb-6">
+      <h2 className="text-center text-2xl sm:text-3xl font-semibold mb-4 sm:mb-6 font-roboto-slab">
         About Us
         <hr className="w-[70vw] sm:w-[50vw] lg:w-[30vw] mx-auto mt-2 sm:mt-4 border-[#C47E4F]" />
       </h2>
