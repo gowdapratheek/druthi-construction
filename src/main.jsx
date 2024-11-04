@@ -10,6 +10,7 @@ import AboutUs from "./pages/AboutUs";
 import EstimateSection from "./pages/EstimateSection";
 import Services from "./pages/Services";
 import ContactUs from "./pages/ContactUs";
+import OurGallery from "./pages/OurGallery";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: "contactus",
         element: <ContactUs />,
+      },
+      {
+        path: "Gallery",
+        element: <OurGallery />,
       },
       {
         path: "*",

@@ -10,7 +10,7 @@ const Services = () => {
         "Our licensed architects consider all relevant factors that influence your home's specific challenges and then create a carefully considered design that expresses your individual aesthetics and lifestyle.",
       color: "bg-[#E3AF8C]",
       icon: (
-        <img src="/architecture.png" className="w-16 h-16" alt="Architects" />
+        <img src="/icons/architecture.png" className="w-16 h-16" alt="Architects" />
       ),
     },
     {
@@ -18,7 +18,7 @@ const Services = () => {
       description:
         "We pride ourselves on our technical expertise and ability to deliver reliable services. Our skilled contractors ensure that every project is completed to the highest standards, on time, and within budget.",
       color: "bg-[#E3AF8C]",
-      icon: <img src="/building.png" className="w-16 h-16" alt="Contractors" />,
+      icon: <img src="/icons/building.png" className="w-16 h-16" alt="Contractors" />,
     },
     {
       title: "INTERIORS",
@@ -26,7 +26,7 @@ const Services = () => {
         "Whether you're into classic elegance or bold modernism, we've got the expertise to bring your vision to life. Our team is ready to craft personalized interiors, from minimalist marvels to extravagance. Let's turn your dream space into a reality.",
       color: "bg-[#E3AF8C]",
       icon: (
-        <img src="/interior-design.png" className="w-16 h-16" alt="Interiors" />
+        <img src="/icons/interior-design.png" className="w-16 h-16" alt="Interiors" />
       ),
     },
     {
@@ -34,7 +34,7 @@ const Services = () => {
       description:
         "We have worked on hundreds of houses in Bangalore, transforming them into dream homes for owners. Built on a foundation of honest pricing, high-quality work, and uncompromised deadlines.",
       color: "bg-[#E3AF8C]",
-      icon: <img src="/engineer.png" className="w-16 h-16" alt="Renovators" />,
+      icon: <img src="/icons/engineer.png" className="w-16 h-16" alt="Renovators" />,
     },
   ];
 

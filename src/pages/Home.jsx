@@ -1,3 +1,4 @@
+import Gallery from "@/components/Gallery";
 import EstimateSection from "./EstimateSection";
 import Services from "./Services";
 import Faqs from "/src/pages/Faqs.jsx";
@@ -6,10 +7,12 @@ const Home = () => {
     <>
       <div className="relative h-screen flex items-center justify-center  ">
         {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover sm:bg-left"
-          style={{ backgroundImage: "url(1.jpg)" }}
-        ></div>
+        <div className="absolute inset-0 bg-cover sm:bg-left">
+          <Gallery
+            src="/1.jpg"
+            blurHash="UHJaWI%%01RPV@%2WBRj_18_IARkIVD*ITj?"
+          />
+        </div>
 
         {/* Overlay */}
         <div className="absolute inset-0 bg-black bg-opacity-70"></div>
