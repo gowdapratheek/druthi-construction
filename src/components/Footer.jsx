@@ -22,10 +22,10 @@ const Footer = () => {
             <p className="font-pop">
               Email:{" "}
               <a
-                href="mailto:contact@druthiconstructions.com"
+                href="mailto:contact@druthiconstruction.com"
                 className="text-gray-600 hover:underline"
               >
-                contact@druthiconstructions.com
+                contact@druthiconstruction.com
               </a>
             </p>
             <ul className=" mt-4 space-y-1 font-pop">
@@ -70,7 +70,7 @@ const Footer = () => {
           {/* Office & Social Media Section */}
           <div className="lg:pl-8">
             <h3 className="text-lg lg:text-2xl font-bold font-roboto-slab underline">
-              Druthi Constructions Office
+              Druthi Construction Office
             </h3>
             <p className="font-pop mt-2 text-lg">
               #148, 1st Main Road, 2nd Stage, RMV Extension, Mysore - 570026

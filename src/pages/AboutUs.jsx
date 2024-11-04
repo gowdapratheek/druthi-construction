@@ -24,7 +24,7 @@ const AboutUs = () => {
             effectiveness. Driven by a commitment to quality, our seasoned team
             ensures each project reflects excellence, making luxury living
             accessible. Discover a harmonious fusion of experience & innovation
-            as we redefine construction standards. Dhruthi Constructions
+            as we redefine construction standards. Dhruthi Construction
             building dreams with a legacy of 20 years.
           </p>
         </div>

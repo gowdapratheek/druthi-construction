@@ -23,7 +23,7 @@ const Home = () => {
             Welcome to
           </h1>
           <h2 className="text-[2.2rem] md:text-6xl lg:text-8xl font-bold font-roboto-slab">
-            Druthi Constructions
+            Druthi Construction
           </h2>
           <p className="text-xs md:text-sm mb-8 text-right font-normal font-pop">
             From concepts to creation, we’re with you every step

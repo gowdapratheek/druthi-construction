@@ -122,7 +122,7 @@ function ContactUs() {
           <hr className="w-[70vw] sm:w-[50vw] lg:w-[30vw] mx-auto mt-2 sm:mt-4 border-[#C47E4F]" />
         </h2>
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d468.8949040630608!2d76.58720086584967!3d12.290345495976718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baf7b0064de4f6f%3A0xa5a697c57f0d91bb!2sdruthi%20constructions!5e1!3m2!1sen!2sin!4v1730661785576!5m2!1sen!2sin"
+          src="https://www.google.com/maps/embed?pb=!1m17!1m11!1m3!1d169.33916306743478!2d76.58733275994263!3d12.288356377619055!2m2!1f0!2f45!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x3baf7b0064de4f6f%3A0xa5a697c57f0d91bb!2sdruthi%20construction!5e1!3m2!1sen!2sin!4v1730747990337!5m2!1sen!2sin"
           width="100%"
           height="450"
           className="rounded-lg border-0"
