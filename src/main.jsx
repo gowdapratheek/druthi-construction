@@ -11,6 +11,8 @@ import EstimateSection from "./pages/EstimateSection";
 import Services from "./pages/Services";
 import ContactUs from "./pages/ContactUs";
 import OurGallery from "./pages/OurGallery";
+import Residential from "./pages/Residential";
+import Government from "./pages/Government";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +26,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/EstimateSection ",
-        element: <EstimateSection/>,
+        element: <EstimateSection />,
       },
       {
         path: "faqs",
@@ -43,8 +45,16 @@ const router = createBrowserRouter([
         element: <ContactUs />,
       },
       {
-        path: "Gallery",
+        path: "gallery",
         element: <OurGallery />,
+      },
+      {
+        path: "residential",
+        element: <Residential />,
+      },
+      {
+        path: "government",
+        element: <Government />,
       },
       {
         path: "*",

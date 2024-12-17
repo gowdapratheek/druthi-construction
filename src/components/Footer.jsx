@@ -52,8 +52,11 @@ const Footer = () => {
                 { title: "Home", link: "/" },
                 { title: "About Us", link: "/aboutus" },
                 { title: "Contact Us", link: "/contact" },
-                { title: "Projects", link: "/projects" },
-                { title: "Our Team", link: "/aboutus" },
+                { title: "Residential projects", link: "/residential" },
+                { title: "Government projects", link: "/government" },
+                {
+                  /* { title: "Our Team", link: "/aboutus" }, */
+                },
               ].map((item, index) => (
                 <li key={index}>
                   <a

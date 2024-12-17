@@ -1,36 +1,33 @@
-import  { useEffect, useState } from "react";
-import Gallery from "../components/Gallery";
+import ContentWrapper from "../components/ContentWrapper";
+import Residential from "./Residential";
+import Government from "./Government";
 
-const OurGallery = () => {
-  const [blurhashes, setBlurhashes] = useState(null);
-
-  useEffect(() => {
-    const loadBlurhashes = async () => {
-      const data = await import("../blurhashes.json");
-      setBlurhashes(data.default);
-    };
-    loadBlurhashes();
-  }, []);
-
-  // Placeholder if blurhashes haven't loaded yet
-  if (!blurhashes) return <p>Loading...</p>;
-
-  const images = [
-    { src: "/1.jpg", blurHash: blurhashes["1.jpg"] },
-    { src: "/2.jpg", blurHash: blurhashes["2.jpg"] },
-    { src: "/3.jpg", blurHash: blurhashes["3.jpg"] },
-    { src: "/5.jpg", blurHash: blurhashes["5.jpg"] },
-    { src: "/6.jpg", blurHash: blurhashes["6.jpg"] },
-    { src: "/7.jpeg", blurHash: blurhashes["7.jpeg"] },
-  ];
-
+function OurGallery() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-[15vh]">
-      {images.map((image, index) => (
-        <Gallery key={index} src={image.src} blurHash={image.blurHash} />
-      ))}
+    <div className="mt-[15vh] p-4">
+      {/* Residential Projects */}
+      <div>
+        <h2 className="text-center text-2xl sm:text-3xl font-semibold mb-8 font-roboto-slab">
+          Residential Projects
+          <hr className="w-[70vw] sm:w-[50vw] lg:w-[30vw] mx-auto mt-2 sm:mt-4 border-[#C47E4F] -mb-[10vh]" />
+        </h2>
+        <ContentWrapper linkTo="/residential">
+          <Residential />
+        </ContentWrapper>
+      </div>
+
+      {/* Government Projects */}
+      <div>
+        <h2 className="text-center text-2xl sm:text-3xl font-semibold mb-8 font-roboto-slab">
+          Government Projects
+          <hr className="w-[70vw] sm:w-[50vw] lg:w-[30vw] mx-auto mt-2 sm:mt-4 border-[#C47E4F] -mb-[10vh]" />
+        </h2>
+        <ContentWrapper linkTo="/government">
+          <Government />
+        </ContentWrapper>
+      </div>
     </div>
   );
-};
+}
 
 export default OurGallery;

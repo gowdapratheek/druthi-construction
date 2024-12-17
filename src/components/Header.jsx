@@ -20,6 +20,7 @@ function Header() {
   const toggleProjectsDropdown = () => setIsProjectsOpen((prev) => !prev);
 
   const handleNavLinkClick = () => {
+    window.scrollTo(0, 0);
     setIsOpen(false);
     setIsProjectsOpen(false);
   };
@@ -42,7 +43,7 @@ function Header() {
   }, []);
 
   return (
-    <header className="fixed top-[3%] right-[5%] w-[90%] mx-auto z-50 bg-[#faf7f5]/0 backdrop-blur-md rounded-xl border border-[#D5C5A2]">
+    <header className="fixed top-[3%] right-[5%] w-[90%] mx-auto z-50 bg-black/40 backdrop-blur-md rounded-xl border border-[#D5C5A2] font-bold font-roboto-slab ">
       <div className="max-w-7xl mx-auto flex justify-between items-center p-2">
         {/* Logo */}
         <div className="flex items-center">
@@ -50,7 +51,7 @@ function Header() {
             to="/"
             className={({ isActive }) =>
               `${
-                isActive ? "text-[#e28d55]" : ""
+                isActive ? "text-[#e18649]" : ""
               } hover:text-[#e28d55] flex justify-center items-center  `
             }
             onClick={handleNavLinkClick}
@@ -76,7 +77,7 @@ function Header() {
         />
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex space-x-6 text-lg font-normal text-[#faf7f5] uppercase tracking-wider">
+        <nav className="hidden lg:flex space-x-6 text-lg font-normal text-[#faf7f5]  tracking-wider">
           <NavLink
             to="/"
             className={({ isActive }) =>
@@ -84,7 +85,16 @@ function Header() {
             }
             onClick={handleNavLinkClick}
           >
-            HOME
+            Home
+          </NavLink>
+          <NavLink
+            to="/gallery"
+            className={({ isActive }) =>
+              `${isActive ? "text-[#e28d55]" : ""} hover:text-[#e28d55]`
+            }
+            onClick={handleNavLinkClick}
+          >
+            Our Gallery
           </NavLink>
           {["About Us", "Contact Us", "Services"].map((link, index) => (
             <NavLink
@@ -101,7 +111,7 @@ function Header() {
           <div className="relative " ref={projectsDropdownRef}>
             <button
               onClick={toggleProjectsDropdown}
-              className="text-[#faf7f5] hover:text-[#e28d55] flex items-center uppercase"
+              className="text-[#faf7f5] hover:text-[#e28d55] flex items-center "
             >
               Projects
               <IoIosArrowDown
@@ -113,13 +123,13 @@ function Header() {
             {isProjectsOpen && (
               <div className="absolute bg-[#faf7f5] text-[#e28d55] shadow-lg mt-2 rounded-lg">
                 <NavLink
-                  to="/projects/project1"
+                  to="/residential"
                   className="block py-3 px-6 rounded-lg"
                 >
                   Residential
                 </NavLink>
                 <NavLink
-                  to="/projects/project2"
+                  to="/government"
                   className="block py-3 px-6 rounded-lg"
                 >
                   Government
@@ -156,37 +166,41 @@ function Header() {
       {isOpen && (
         <nav
           ref={menuRef}
-          className="lg:hidden mt-2 rounded-lg shadow-lg transition-transform duration-1000 text-center space-y-6 font-normal text-xl uppercase tracking-wider"
+          className="lg:hidden mt-2 rounded-lg shadow-lg transition-transform duration-1000 text-center space-y-4 font-normal text-xl  tracking-wider"
           style={{ fontFamily: "Poppins, serif" }}
         >
           <NavLink
             to="/"
             className={({ isActive }) =>
-              `${isActive ? "text-[#e28d55]" : ""} hover:text-[#e28d55]`
+              `${
+                isActive ? "text-[#e28d55]" : ""
+              } hover:text-[#e28d55] text-[#faf7f5]`
             }
             onClick={handleNavLinkClick}
           >
-            HOME
+            Home
           </NavLink>
-          {["About Us", "Contact Us", "Services"].map((link, index) => (
-            <NavLink
-              key={index}
-              to={`/${link.toLowerCase().replace(/\s+/g, "")}`}
-              className={({ isActive }) =>
-                `block px-4 py-2 ${
-                  isActive ? "text-[#e28d55]" : "text-[#faf7f5]"
-                }`
-              }
-              onClick={handleNavLinkClick}
-            >
-              {link}
-            </NavLink>
-          ))}
+          {["Our Gallery", "About Us", "Contact Us", "Services"].map(
+            (link, index) => (
+              <NavLink
+                key={index}
+                to={`/${link.toLowerCase().replace(/\s+/g, "")}`}
+                className={({ isActive }) =>
+                  `block px-4 py-2 ${
+                    isActive ? "text-[#e28d55]" : "text-[#faf7f5]"
+                  }`
+                }
+                onClick={handleNavLinkClick}
+              >
+                {link}
+              </NavLink>
+            )
+          )}
           <div className="relative w-full " ref={projectsDropdownRef}>
             <div className="w-full flex justify-center items-center">
               <button
                 onClick={toggleProjectsDropdown}
-                className="text-[#faf7f5] hover:text-[#e28d55] flex items-center uppercase tracking-wider"
+                className="text-[#faf7f5] hover:text-[#e28d55] flex items-center  tracking-wider"
               >
                 Projects
                 <IoIosArrowDown
@@ -197,16 +211,16 @@ function Header() {
               </button>
             </div>
             {isProjectsOpen && (
-              <div className="relative left-1/2 transform -translate-x-1/2 shadow-lg mt-2 rounded-lg">
+              <div className="relative left-1/2 transform -translate-x-1/2 shadow-lg mt-2 rounded-lg bg-black/40">
                 <NavLink
-                  to="/projects/project1"
+                  to="/residential"
                   className="block py-4 px-6 rounded-lg text-[#faf7f5] hover:text-[#e28d55]"
                   onClick={handleNavLinkClick}
                 >
                   Residential
                 </NavLink>
                 <NavLink
-                  to="/projects/project2"
+                  to="/government"
                   className="block py-4 px-6 rounded-lg text-[#faf7f5] hover:text-[#e28d55]"
                   onClick={handleNavLinkClick}
                 >

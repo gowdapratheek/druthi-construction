@@ -31,13 +31,13 @@ const Gallery = ({ src, blurHash }) => {
           resolutionX={resolution.x}
           resolutionY={resolution.y}
           punch={1}
-          className="absolute top-0 left-0 w-full h-full"
+          className="absolute top-0 left-0 w-full h-full rounded-sm"
         />
       )}
       <img
         src={src}
         onLoad={() => setLoaded(true)}
-        className={`w-full h-full object-cover transition-opacity duration-500 ${
+        className={`w-full h-full object-cover rounded-sm transition-opacity duration-500 ${
           loaded ? "opacity-100" : "opacity-0"
         }`}
         alt="Construction Site"

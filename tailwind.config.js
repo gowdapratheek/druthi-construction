@@ -57,4 +57,7 @@ export default {
     },
   },
   plugins: [require("tailwindcss-animate")],
+  corePlugins: {
+    columns: true, // Enable 'columns' utility
+  },
 };

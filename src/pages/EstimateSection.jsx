@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const EstimateSection = () => {
   return (
     <>
@@ -60,11 +62,11 @@ const EstimateSection = () => {
 
       <div className="bg-[#FAF7F5] text-center p-10 relative mt-[15vh]">
         <h2 className="text-2xl font-semibold text-black mb-8 font-roboto-slab">
-          Find Out What It Costs To Hire Us.
+          How Much It Costs To Hire Us.
         </h2>
-        <button className="bg-[#E28D55] text-white font-semibold px-4 md:px-6 py-3 rounded-lg absolute left-1/2 transform -translate-x-1/2 mt-4 font-roboto-slab">
+        <Link to="/contactus" className="bg-[#E28D55] text-white font-semibold px-4 md:px-6 py-3 rounded-lg absolute left-1/2 transform -translate-x-1/2 mt-4 font-roboto-slab">
           Get an Estimate Now
-        </button>
+        </Link>
       </div>
     </>
   );

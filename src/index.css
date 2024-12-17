@@ -77,3 +77,6 @@
 .font-pop {
   font-family: "Poppins", serif;
 }
+.break-inside-avoid {
+  break-inside: avoid;
+}

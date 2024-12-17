@@ -1,8 +1,57 @@
+import { useState } from "react";
 import { LuMail } from "react-icons/lu";
 import { FiClock, FiPhone } from "react-icons/fi";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 function ContactUs() {
+  // State for form inputs
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const [status, setStatus] = useState(null);
+
+  // Handle input changes
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("Sending...");
+
+    try {
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbzh5JTE9ImPv3yALI00MjRowxa3NghrcsR18TPtise4TILPz_pXM5jM7iER0qEeYefIgQ/exec",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            message: formData.message,
+          }),
+        }
+      );
+
+      if (response.ok) {
+        setStatus("Message sent successfully!");
+        setFormData({ name: "", email: "", phone: "", message: "" }); // Reset form
+      } else {
+        throw new Error("Failed to send message");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      setStatus("Failed to send message. Please try again.");
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col items-center px-4 sm:px-6 lg:px-8">
       <h2 className="text-center text-2xl sm:text-3xl font-semibold mb-8 mt-[17vh] font-roboto-slab">
@@ -18,26 +67,41 @@ function ContactUs() {
           <p className="text-gray-500 mb-8 text-center font-pop">
             Complete the form, and we will get back to you
           </p>
-          <form className="space-y-6 text-lg">
+          <form className="space-y-6 text-lg" onSubmit={handleSubmit}>
             <input
               type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
               className="w-full border-b-2 border-gray-300 focus:border-orange-500 outline-none px-2 py-2"
               placeholder="Your Name*"
+              required
             />
             <input
               type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
               className="w-full border-b-2 border-gray-300 focus:border-orange-500 outline-none px-2 py-2"
               placeholder="Your Email"
             />
             <input
               type="tel"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
               className="w-full border-b-2 border-gray-300 focus:border-orange-500 outline-none px-2 py-2"
               placeholder="Your Phone Number*"
+              required
             />
             <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
               className="w-full border-b-2 border-gray-300 focus:border-orange-500 outline-none px-2 py-2"
               placeholder="Describe your requirements*"
               rows="4"
+              required
             ></textarea>
             <button
               type="submit"
@@ -45,6 +109,11 @@ function ContactUs() {
             >
               Submit
             </button>
+            {status && (
+              <p className="text-center mt-4 text-gray-600 font-medium">
+                {status}
+              </p>
+            )}
           </form>
         </div>
 

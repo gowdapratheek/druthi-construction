@@ -2,6 +2,8 @@ import Gallery from "@/components/Gallery";
 import EstimateSection from "./EstimateSection";
 import Services from "./Services";
 import Faqs from "/src/pages/Faqs.jsx";
+import { Link } from "react-router-dom";
+
 const Home = () => {
   return (
     <>
@@ -15,7 +17,7 @@ const Home = () => {
         </div>
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black bg-opacity-70"></div>
+        <div className="absolute inset-0 bg-black bg-opacity-55"></div>
 
         {/* Content */}
         <div className="relative top-[2%] lg:top-10 z-10 text-center text-white px-4 lg:px-6">
@@ -38,18 +40,18 @@ const Home = () => {
 
           {/* Buttons */}
           <div className="flex justify-center space-x-4">
-            <a
-              href="#hire-us"
+            <Link
+              to="/contactus"
               className="bg-white text-black w-1/2 md:w-1/4 px-5 py-3 rounded-md shadow hover:bg-gray-200 transition-transform duration-300 hover:scale-105 active:scale-95 active:shadow-md text-center font-roboto-slab"
             >
               Hire Us
-            </a>
-            <a
-              href="#our-projects"
+            </Link>
+            <Link
+              to="/gallery"
               className="bg-orange-500 text-white w-1/2 md:w-1/4 px-5 py-3 rounded-md shadow hover:bg-orange-600 transition-transform duration-300 hover:scale-105 active:scale-95 active:shadow-md text-center font-roboto-slab"
             >
               Our Projects
-            </a>
+            </Link>
           </div>
         </div>
       </div>
