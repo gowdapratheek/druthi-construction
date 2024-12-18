@@ -4,6 +4,7 @@ import { FiClock, FiPhone } from "react-icons/fi";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 function ContactUs() {
+  window.scrollTo(0, 0);
   // State for form inputs
   const [formData, setFormData] = useState({
     name: "",
@@ -26,6 +27,8 @@ function ContactUs() {
     setStatus("Sending...");
 
     try {
+      console.log(formData);
+
       const response = await fetch(
         "https://script.google.com/macros/s/AKfycbzh5JTE9ImPv3yALI00MjRowxa3NghrcsR18TPtise4TILPz_pXM5jM7iER0qEeYefIgQ/exec",
         {
