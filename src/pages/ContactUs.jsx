@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import { LuMail } from "react-icons/lu";
 import { FiClock, FiPhone } from "react-icons/fi";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 function ContactUs() {
   window.scrollTo(0, 0);
+  const form = useRef();
+
   // State for form inputs
   const [formData, setFormData] = useState({
     name: "",
@@ -12,6 +15,30 @@ function ContactUs() {
     phone: "",
     message: "",
   });
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setStatus("Sending...");
+
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_SERVICE,
+        import.meta.env.VITE_TEMP,
+        form.current,
+        {
+          publicKey: import.meta.env.VITE_ID,
+        }
+      )
+      .then(
+        () => {
+          setStatus("Message sent successfully!");
+          setFormData({ name: "", email: "", phone: "", message: "" });
+        },
+        (error) => {
+          console.error("Error:", error.text);
+          setStatus("Failed to send message. Please try again.");
+        }
+      );
+  };
 
   const [status, setStatus] = useState(null);
 
@@ -19,40 +46,6 @@ function ContactUs() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-  };
-
-  // Handle form submission
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus("Sending...");
-
-    try {
-      console.log(formData);
-
-      const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbzh5JTE9ImPv3yALI00MjRowxa3NghrcsR18TPtise4TILPz_pXM5jM7iER0qEeYefIgQ/exec",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            name: formData.name,
-            email: formData.email,
-            phone: formData.phone,
-            message: formData.message,
-          }),
-        }
-      );
-
-      if (response.ok) {
-        setStatus("Message sent successfully!");
-        setFormData({ name: "", email: "", phone: "", message: "" }); // Reset form
-      } else {
-        throw new Error("Failed to send message");
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      setStatus("Failed to send message. Please try again.");
-    }
   };
 
   return (
@@ -70,7 +63,7 @@ function ContactUs() {
           <p className="text-gray-500 mb-8 text-center font-pop">
             Complete the form, and we will get back to you
           </p>
-          <form className="space-y-6 text-lg" onSubmit={handleSubmit}>
+          <form className="space-y-6 text-lg" ref={form} onSubmit={sendEmail}>
             <input
               type="text"
               name="name"
